@@ -5,6 +5,7 @@ from dress.worker import Worker
 @pytest.mark.parametrize(
     "order, output",
     [
+        ([6], "fail"),  # leave
         ([5, 1], "socks, fail"),  # hat no shirt
         ([2, 4, 5, 3], "pants, fail"),  # shoes no sock
         ([5, 4, 2], "socks, fail"),  # shoes no pants

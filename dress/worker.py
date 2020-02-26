@@ -25,7 +25,7 @@ class Worker(object):
         :param order: list of numbers to indicate articles of clothing to don
         """
 
-        #only dress if we have not already 2 possible finish states fail or leave
+        # only dress if we have not already. 2 possible finish states fail or leave
         if not self.state:
             clothes = []
             for code in order:
@@ -67,7 +67,7 @@ class Worker(object):
         return next(filter(lambda x: x.get_code() == code,  self.my_clothes))
 
     def _get_essential_aoc(self):
-        return set(filter(lambda x: x.is_essential() is True,  self.my_clothes))
+        return set(filter(lambda x: x.is_essential(),  self.my_clothes))
 
     def __str__(self):
         wearing = OUTPUT_DEL.join(map(str, self.worn))
