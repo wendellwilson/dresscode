@@ -72,5 +72,8 @@ class Worker(object):
     def __str__(self):
         wearing = OUTPUT_DEL.join(map(str, self.worn))
         if self.state:
-            return '%s%s%s'  % (wearing, OUTPUT_DEL, self.state)
+            if wearing:
+                return '%s%s%s' % (wearing, OUTPUT_DEL, self.state)
+            else:
+                return self.state
         return wearing
