@@ -1,4 +1,5 @@
-
+from errors import InputError
+from constants import INPUT_DEL, OPTION_NAMES, INPUT_ERROR_MESSAGE
 
 
 def clean_input(self, user_input):
@@ -7,11 +8,11 @@ def clean_input(self, user_input):
         final_input = []
         for item in input_list:
             # make sure numbers are valid inputs
-            if int(item) not in self.ALL_INPUTS:
-                raise ValueError
+            if int(item) not in OPTION_NAMES.keys():
+                raise InputError(user_input)
             # remove duplicate items of clothing
             else:
                 if item not in final_input:
                     final_input.append(item)
-    except ValueError:
-        print(ERROR_MESSAGE)
+    except InputError:
+        print(INPUT_ERROR_MESSAGE)

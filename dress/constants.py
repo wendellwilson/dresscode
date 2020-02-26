@@ -19,8 +19,8 @@ OUTPUT_DEL = ', '
 
 FAILURE_MESSAGE = "fail"
 
-ERROR_INTRO = "Invalid input. Please input a space separated list of numbers to indicate articles of " \
+INPUT_ERROR_INTRO = "Invalid input. Please input a space separated list of numbers to indicate articles of " \
                 "clothing or actions."
-OPTION_KEY = ', '.join("{!s}={!r}".format(item) for item in OPTION_NAMES.items())
-ERROR_MESSAGE = "%s %s" % (ERROR_INTRO, OPTION_KEY)
+OPTION_KEY = ', '.join("{!s}={!r}".format(key, val) for (key, val) in OPTION_NAMES.items())
+INPUT_ERROR_MESSAGE = "%s %s" % (INPUT_ERROR_INTRO, OPTION_KEY)
 

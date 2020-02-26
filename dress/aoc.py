@@ -1,10 +1,10 @@
 # Article of Clothing
-class AoC():
-    def __init__(self, name, code, essential, prereq):
+class AoC(object):
+    def __init__(self, name, code, essential, req=set()):
         self.name = name
         self.code = code
         self.essential = essential
-        self.prereq = prereq
+        self.req = req
 
     def get_name(self):
         return self.name
@@ -12,14 +12,14 @@ class AoC():
     def get_code(self):
         return self.code
 
-    def get_req(self):
-        return self.req
-
     def is_essential(self):
         return self.essential
 
-    def set_prereq(self, prereq):
-        self.prereq = prereq
+    def get_req(self):
+        return self.req
+
+    def set_req(self, req):
+        self.req = req
 
     def __str__(self):
         return self.name
