@@ -1,11 +1,3 @@
-class InputError(Exception):
-    """Exception raised for errors in the input.
-    """
-
-    def __init__(self, user_input):
-        self.user_input = user_input
-
-
 class DressingError(Exception):
     """Raised when a failure in worker dressing occurs
     """
