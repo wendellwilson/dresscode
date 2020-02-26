@@ -3,9 +3,10 @@ from dress.aoc import AoC
 from dress.constants import SOCKS, PANTS, SHOES, SHIRT, HAT, LEAVE, \
     OUTPUT_DEL, FAILURE_MESSAGE, OPTION_NAMES
 
-RESTRICTED_ERROR_MESSAGE = ""
 
 class Worker(object):
+    """A worker that has articles of clothing and can get dressed based on instructions
+    """
 
     def __init__(self, name):
         self.name = name
@@ -19,15 +20,23 @@ class Worker(object):
         self.my_clothes = [socks, pants, shoes, shirt, hat]
 
     def get_dressed(self, order):
+        """
+        try to put on all articles of clothing in given list. fails or is successful and leaves for work
+        :param order: list of numbers to indicate articles of clothing to don
+        """
+
+        #only dress if we have not already 2 possible finish states fail or leave
         if not self.state:
             clothes = []
             for code in order:
+                # all articles of clothing after the leave command don't matter
                 if code == LEAVE:
                     break
                 else:
                     clothes.append(self._get_aoc_by_code(code))
             try:
                 self._dress(clothes)
+                # leave once dressed
                 self._leave()
             except DressingError:
                 self._fail()
@@ -48,6 +57,7 @@ class Worker(object):
         self.state = FAILURE_MESSAGE
 
     def _wear(self, item):
+        # check if clothing requirements are met
         if item.get_req().issubset(set(self.worn)):
             self.worn.append(item)
         else:

@@ -1,3 +1,4 @@
+# instruction options
 HAT = 1
 PANTS = 2
 SHIRT = 3
@@ -5,6 +6,7 @@ SHOES = 4
 SOCKS = 5
 LEAVE = 6
 
+# associated output of instructions
 OPTION_NAMES= {
     HAT: "hat",
     PANTS: "pants",
@@ -13,12 +15,13 @@ OPTION_NAMES= {
     SOCKS: "socks",
     LEAVE: "leave",
 }
+FAILURE_MESSAGE = "fail"
 
+# delimiters
 INPUT_DEL = ' '
 OUTPUT_DEL = ', '
 
-FAILURE_MESSAGE = "fail"
-
+# messages
 INPUT_INSTRUCTIONS = "Please input a space separated list of numbers to indicate articles of " \
                 "clothing or actions."
 INPUT_ERROR_INTRO = "Invalid input."
