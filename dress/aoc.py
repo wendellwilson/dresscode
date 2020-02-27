@@ -1,6 +1,15 @@
 # Article of Clothing
 class AoC(object):
-    def __init__(self, name, code, essential, req=set()):
+    """Article of Clothing
+
+        name - name of the clothing
+        code - integer code used to refer to the clothing
+        essential - if this clothing is required to leave the house
+        req - other clothing required to be worn before this clothing
+    """
+    def __init__(self, name, code, essential, req=None):
+        if req is None:
+            req = set()
         self.name = name
         self.code = code
         self.essential = essential

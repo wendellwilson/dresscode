@@ -5,7 +5,7 @@ from dress.utils import clean_input
     "user_input, cleaned_input",
     [
         ("5 1", [5, 1]),
-        ("5 1 1", [5, 1]), # duplicate
+        ("5 1 1", [5, 1]),  # duplicates
         ("5 2 3 6 4", [5, 2, 3, 6, 4]),
     ],
 )

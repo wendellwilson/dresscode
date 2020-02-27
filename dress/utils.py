@@ -2,11 +2,11 @@ from dress.constants import INPUT_DEL, OPTION_NAMES
 
 
 def clean_input(dirty_input):
-    '''
-    checkes that a input is valid and converts it into a list of clothing options
+    """
+    checks that a input is valid and converts it into a list of clothing options
     :param dirty_input: user input to be cleaned
-    :return: list of numbers that corespond to available options constants.OPTION_NAMES
-    '''
+    :return: list of numbers that corresponds to available options constants.OPTION_NAMES
+    """
     input_list = str.split(dirty_input, INPUT_DEL)
     final_input = []
     for item in input_list:
