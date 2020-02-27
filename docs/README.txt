@@ -10,12 +10,14 @@ This project is not compatible with python 2.
 
 The worker you are ordering around will follow these Rules:
 
-They must put your socks on before your shoes.
-They must put your pants on before your shoes.
-They must put your shirt on before your hat.
-A hat is optional but all other articles of clothing are required.
-They must leave the house when receiving the number 6. They must leave the house after getting dressed.
-Any violation will output "fail" and stop immediately.
+1. They must put your socks on before your shoes.
+2. They must put your pants on before your shoes.
+3. They must put your shirt on before your hat.
+4. A hat is optional but all other articles of clothing are required.
+5. They must leave the house when receiving the number 6. They must leave the house after getting dressed.
+6. Any violation will output "fail" and stop immediately.
+
+The 5th rule  has been interpreted to mean that there is a implied leave command at the end of every dressing sequence.
 
 Example:
 > python3 dresscode/dress_for_work.py
