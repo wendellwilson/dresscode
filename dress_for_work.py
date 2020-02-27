@@ -2,6 +2,7 @@ from dress.constants import INPUT_ERROR_MESSAGE, INPUT_PROMPT
 from dress.worker import Worker
 from dress.utils import clean_input
 
+
 print(INPUT_PROMPT)
 # loop until we get a good user input
 while True:
